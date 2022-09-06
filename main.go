@@ -4,7 +4,6 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"os"
 	"strings"
 )
 
@@ -20,13 +19,9 @@ func readInput() (src string, err error) {
 func main() {
 	str, err := readInput()
 	if err != nil {
-		fail(err)
+		fmt.Println("0")
+		return
 	}
 	words := strings.Split(str, " ")
 	fmt.Println(len(words))
-}
-
-func fail(err error) {
-	fmt.Println("Error:", err)
-	os.Exit(1)
 }
